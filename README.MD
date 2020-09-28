@@ -20,4 +20,4 @@ Freshshop already owns the frontend part of the project. You must now implement 
 
 Build a secure authentication system in Node.js featuring email confirmation, password reset, remember me.
 We'll use Express for routing, MongoDB for data persistence, and Redis for session storage.
-I'll also be using TypeScript for type-checking and auto-complete
+I'll also be using TypeScript for type-checking and auto-complete.
