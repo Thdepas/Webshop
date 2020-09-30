@@ -28,3 +28,17 @@ I'll also be using TypeScript for type-checking and auto-complete.
 - ioredis@4.17.3
 - connect-redis@5.0.0
 - mogoose@0.0.1-security
+
+### Day two
+
+Installed MongoDB and Redis in a docker-compose container, MongoDB image doesn't create an admin user for the initial database so we mapped a shell script to the MongoDB entrypoint directory.
+Registration. When signing up with our app, a user would need to submit some personal data, which we're going to validate with Joi. @hapi/joi.
+initiate user sessions and issue session cookies upon successful registration.
+Proper error handling.
+
+### Day three
+
+Proper error handling.
+Password Security with NPM bcryptjs hashing algorithm.
+Implementation of login and logout functionality. When the user signs in, we validate their email address and password,
+match them with a user in our database, create a session in cache, and issue a session cookie. When the user logs out, we destroy the session and unset the cookie.
