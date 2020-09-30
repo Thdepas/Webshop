@@ -1,10 +1,11 @@
 import { ObjectSchema } from "@hapi/joi";
-import { Schema } from "mongoose";
+import { ObjectSchema } from "@hapi/joi";
+import { BadRequest } from "../errors";
 
-export const validate = async (shema: ObjectSchema, payload: any) => {
+export const validate = async (schema: ObjectSchema, payload: any) => {
   try {
-    await Schema.validateAsync(payload, { abordEarly: false });
+    await schema.validateAsync(payload, { abortEarly: false });
   } catch (e) {
-    throw new Error(e);
+    throw new BadRequest(e);
   }
 };

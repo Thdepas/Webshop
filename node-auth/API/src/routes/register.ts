@@ -3,6 +3,7 @@ import { guest, catchAsync } from "../middleware";
 import { validate, registerSchema } from "../validation";
 import { User } from "../models";
 import { logIn } from "../auth";
+import { BadRequest } from "../errors";
 
 const router = Router();
 
@@ -16,7 +17,7 @@ router.post(
 
     const found = await User.exists({ email });
     if (found) {
-      throw new Error("Invalid email");
+      throw new BadRequest("Invalid email");
     }
 
     const user = await User.create({

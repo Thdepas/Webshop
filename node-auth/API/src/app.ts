@@ -1,7 +1,8 @@
-import express, { NextFunction } from "express";
+import express from "express";
 import session, { Store } from "express-session";
 import { SESSION_OPTIONS } from "./config";
-import { register } from "./routes";
+import { ServerError, notFound } from "./middleware/errors";
+import { login, register } from "./routes";
 
 export const createApp = (store: Store) => {
   const app = express();
@@ -14,16 +15,13 @@ export const createApp = (store: Store) => {
     })
   );
 
+  app.use(login);
+
   app.use(register);
 
-  app.use(function (req, res, next) {
-    res.status(404).json({ message: "Not found" });
-  });
+  app.use(notFound);
 
-  app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack);
-    res.status(500).json({ message: "Internal Server Error" });
-  });
+  app.use(ServerError);
 
   return app;
 };
