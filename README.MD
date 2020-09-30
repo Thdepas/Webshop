@@ -22,6 +22,8 @@ Build a secure authentication system in Node.js featuring email confirmation, pa
 We'll use Express for routing, MongoDB for data persistence, and Redis for session storage.
 I'll also be using TypeScript for type-checking and auto-complete.
 
+Using :
+
 - express@4.17.1
 - typescript@4.0.3
 - express-session@1.17.1
@@ -31,14 +33,21 @@ I'll also be using TypeScript for type-checking and auto-complete.
 
 ### Day two
 
-Installed MongoDB and Redis in a docker-compose container, MongoDB image doesn't create an admin user for the initial database so we mapped a shell script to the MongoDB entrypoint directory.
-Registration. When signing up with our app, a user would need to submit some personal data, which we're going to validate with Joi. @hapi/joi.
-initiate user sessions and issue session cookies upon successful registration.
-Proper error handling.
+- Installed MongoDB and Redis in a docker-compose container.
+- MongoDB image doesn't create an admin user for the initial database so we mapped a shell script to the MongoDB entrypoint directory.
+- Registration. When signing up with our app, a user would need to submit some personal data, which we're going to validate with Joi. @hapi/joi.
+- initiate user sessions and issue session cookies upon successful registration.
+- Proper error handling.
 
 ### Day three
 
-Proper error handling.
-Password Security with NPM bcryptjs hashing algorithm.
-Implementation of login and logout functionality. When the user signs in, we validate their email address and password,
-match them with a user in our database, create a session in cache, and issue a session cookie. When the user logs out, we destroy the session and unset the cookie.
+- Proper error handling.
+- Password Security with NPM bcryptjs hashing algorithm.
+- Implementation of login and logout functionality. When the user signs in, we validate their email address and password,
+  match them with a user in our database, create a session in cache, and issue a session cookie. When the user logs out,
+  we destroy the session and unset the cookie.
+
+Everything is made throught shell
+
+![Shell Unix1](shell1.png)
+![Shell Unix2](shell2.png)
