@@ -4,7 +4,6 @@ import { validate, registerSchema } from "../validation";
 import { User } from "../models";
 import { logIn } from "../auth";
 import { BadRequest } from "../errors";
-import Joi from "@hapi/joi";
 
 const router = Router();
 

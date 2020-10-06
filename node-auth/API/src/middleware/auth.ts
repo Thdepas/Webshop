@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import { Request, NextFunction } from "express";
 import { isLoggedIn } from "../auth";
 import { BadRequest, Unauthorized } from "../errors";
 

@@ -1,8 +1,9 @@
 import express from "express";
 import session, { Store } from "express-session";
+import path from "path";
 import { SESSION_OPTIONS } from "./config";
 import { ServerError, notFound } from "./middleware/errors";
-import { login, register } from "./routes";
+import { login, register, views } from "./routes";
 
 export const createApp = (store: Store) => {
   const app = express();
@@ -17,6 +18,14 @@ export const createApp = (store: Store) => {
   app.use(express.json());
 
   app.use(express.urlencoded({ extended: true }));
+
+  app.set("view engine", "ejs");
+
+  app.set("views", path.join(__dirname, "views"));
+
+  app.use("/static", express.static(path.join(__dirname, "public")));
+
+  app.use(views);
 
   app.use(login);
 

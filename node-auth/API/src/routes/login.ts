@@ -7,11 +7,6 @@ import { validate, loginSchema } from "../validation";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  console.log(req.session);
-  res.send(`<h3>Home</h3>`);
-});
-
 router.get("/login", (req, res) => {
   console.log(req.session);
 
@@ -42,6 +37,7 @@ router.post(
     }
     logIn(req, user.id);
     res.json({ message: "ok" });
+    res.redirect("/");
   })
 );
 
