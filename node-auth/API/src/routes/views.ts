@@ -5,23 +5,18 @@ const router = Router();
 
 router.get(
   "/",
-  guest,
   catchAsync(async (req, res) => {
     res.render("index");
   })
 );
-
 router.get(
   "/about",
-  guest,
   catchAsync(async (req, res) => {
     res.render("about");
   })
 );
-
 router.get(
   "/cart",
-  guest,
   catchAsync(async (req, res) => {
     res.render("cart");
   })
@@ -37,7 +32,6 @@ router.get(
 
 router.get(
   "/contact-us",
-  guest,
   catchAsync(async (req, res) => {
     res.render("contact-us");
   })
@@ -45,7 +39,6 @@ router.get(
 
 router.get(
   "/gallery",
-  guest,
   catchAsync(async (req, res) => {
     res.render("gallery");
   })
@@ -69,7 +62,6 @@ router.get(
 
 router.get(
   "/shop",
-  guest,
   catchAsync(async (req, res) => {
     res.render("shop");
   })
@@ -77,7 +69,6 @@ router.get(
 
 router.get(
   "/wishlist",
-  auth,
   catchAsync(async (req, res) => {
     res.render("wishlist");
   })

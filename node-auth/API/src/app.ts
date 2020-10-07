@@ -3,6 +3,7 @@ import session, { Store } from "express-session";
 import path from "path";
 import { SESSION_OPTIONS } from "./config";
 import { ServerError, notFound } from "./middleware/errors";
+import { shop } from "./models";
 import { login, register, views } from "./routes";
 
 export const createApp = (store: Store) => {
@@ -30,6 +31,8 @@ export const createApp = (store: Store) => {
   app.use(login);
 
   app.use(register);
+
+  app.use(shop);
 
   app.use(notFound);
 
