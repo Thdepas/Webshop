@@ -11,9 +11,23 @@ const productSchema = new Schema({
 
 export const Product = model("Product", productSchema);
 
-const product = new Product({
+const carrots = new Product({
   imagePath: '"http://localhost:3000/static/images/img-pro-01.jpg"',
   title: "Carrots",
+  description: "Lorem ipsum dolor sit amet",
+  price: 9.79,
+});
+
+const tomatoes = new Product({
+  imagePath: '"http://localhost:3000/static/images/img-pro-02.jpg"',
+  title: "Tomatoes",
+  description: "Lorem ipsum dolor sit amet",
+  price: 9.79,
+});
+
+const grapes = new Product({
+  imagePath: '"http://localhost:3000/static/images/img-pro-03.jpg"',
+  title: "Grapes",
   description: "Lorem ipsum dolor sit amet",
   price: 9.79,
 });
@@ -21,9 +35,37 @@ const product = new Product({
 const router = Router();
 
 router.post(
-  "/shop",
+  "/cart",
   catchAsync(async (req, res) => {
-    await product
+    await carrots
+      .save()
+      .then((item) => {
+        res.send("item saved to database");
+      })
+      .catch((err) => {
+        res.status(400).send("unable to save to database");
+      });
+  })
+);
+
+router.post(
+  "/cart",
+  catchAsync(async (req, res) => {
+    await tomatoes
+      .save()
+      .then((item) => {
+        res.send("item saved to database");
+      })
+      .catch((err) => {
+        res.status(400).send("unable to save to database");
+      });
+  })
+);
+
+router.post(
+  "/cart",
+  catchAsync(async (req, res) => {
+    await grapes
       .save()
       .then((item) => {
         res.send("item saved to database");

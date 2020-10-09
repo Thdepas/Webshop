@@ -1,2 +1,3 @@
 export * from "./user";
-export { default as shop } from "./shopping";
+export { default as cart } from "./shopping";
+export { default as news_letter } from "./newsletter";

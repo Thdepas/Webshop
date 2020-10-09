@@ -9,11 +9,25 @@ curl -v -X POST localhost:3000/register -H 'Content-Type: application/json' \
  curl -X POST localhost:3000/register -H 'Content-Type: application/json' \
  -d '{"email": "thdepas@gmail.com",  "password": "Secret12"  }'
 
+
+
  curl -X POST localhost:3000/shop -H 'Content-Type: application/json' \
  -d '{"imagePath": "http://localhost:3000/static/images/img-pro-01.jpg",
     "title": "Carrots",
     "description": "Lorem ipsum dolor sit amet",
     "price": 9.79}'
+
+curl -v -X POST localhost:3000/shop -H 'Content-Type: application/json' \
+ -d '{"imagePath": "http://localhost:3000/static/images/img-pro-02.jpg",
+"title": "Tomatoes",
+"description": "Lorem ipsum dolor sit amet",
+"price": 9.79,}'
+
+
+
+
+
+
 ```
 
 ## docker && moongoose functions
@@ -38,8 +52,8 @@ docker exec -it node-auth_cache_1 redis-cli -a secret
 scan0
 get
 
-curl -v -X POST localhost:3000/shopping -H 'Content-Type: application/json' \
- -d '{"imagePath:" '"http://localhost:3000/static/images/img-pro-01.jpg"',
-"title": "Carrots",
+curl -v -X POST localhost:3000/shop -H 'Content-Type: application/json' \
+ -d '{"imagePath:" "http://localhost:3000/static/images/img-pro-02.jpg",
+"title": "Tomatoes",
 "description": "Lorem ipsum dolor sit amet",
 "prince": 9.79,}'
