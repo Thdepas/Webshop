@@ -34,8 +34,8 @@ Using :
 ### Day two
 
 - Installed MongoDB and Redis in a docker-compose container.
-- MongoDB image doesn't create an admin user for the initial database so we mapped a shell script to the MongoDB entrypoint directory.
-- Registration. When signing up with our app, a user would need to submit some personal data, which we're going to validate with Joi. @hapi/joi.
+- MongoDB image doesn't create an admin user for the initial database so we mapped a shell script to the MongoDB entrypoint         directory.
+- Registration. When signing up with our app, a user would need to submit some personal data, which we're going to validate with    Joi. @hapi/joi.
 - initiate user sessions and issue session cookies upon successful registration.
 - Proper error handling.
 
@@ -51,3 +51,45 @@ Everything is made throught shell
 
 ![Shell Unix1](shell1.png)
 ![Shell Unix2](shell2.png)
+
+### Day four
+
+- <%= EJS %> Embedded JavaScript templating.
+- Connection between frontend login & register and backend.
+- Routing the web site,restructuring app : directory & files structures.
+
+### Day five
+
+- <%= EJS %> Embedded JavaScript templating.
+- Connection between frontend login & register and backend.
+- Routing the web site,restructuring app : directory & files structures.
+
+### Day six
+
+- <%= EJS %> Embedded JavaScript templating.
+- Connection between frontend login & register and backend.
+- Routing the web site,restructuring app : directory & files structures.
+
+### Day seven
+
+- Building of a new mongoDB library for the products in the webshop, storage server side.
+- Newsletter data parsing from the register page. (pending)
+
+![Shell Unix1](shell3.png)
+
+### Day eight 
+
+- Building of a new mongoDB library for the products in the webshop, storage server side.
+- Newsletter data parsing from the register page. (pending)
+
+ ### Day nine 
+
+- Building and connecting the store and shopping cart client-side with vanilla javascript.
+
+ ### Day ten
+
+- Building and connecting the store and shopping cart client-side with vanilla javascript.
+
+![Shell Unix1](shell4.png)
+
+
