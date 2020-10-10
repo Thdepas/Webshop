@@ -1,4 +1,4 @@
-# node-auth
+# node.js & mongoDB
 
 ## curl
 
@@ -22,8 +22,6 @@ curl -v -X POST localhost:3000/shop -H 'Content-Type: application/json' \
 "title": "Tomatoes",
 "description": "Lorem ipsum dolor sit amet",
 "price": 9.79,}'
-
-
 
 
 ```
